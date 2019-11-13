@@ -45,7 +45,7 @@ const View : React.FC<ViewProps> = ({
 }
 
 View.defaultProps={
-    card:true,
+    card:false,
     flex:1
 }
 

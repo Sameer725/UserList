@@ -9,5 +9,8 @@ module.exports = {
   },
   testPathIgnorePatterns: ["/node_modules/"],
   moduleFileExtensions: ["ts", "tsx", "js", "json"],
-  setupFilesAfterEnv: ["<rootDir>/setup/setupTests.ts"]
+  setupFilesAfterEnv: ["<rootDir>/setup/setupTests.ts"],
+  moduleNameMapper: {
+    ".+\\.(svg|png|jpg)$": "identity-obj-proxy"
+  }
 };

@@ -9,6 +9,7 @@ const StyleProfile = styled.div<ProfileProps>`
   width:${({width})=>width}px;
   padding:10px;
   display:flex;
+  flex-wrap:'wrap';
   ${({outline})=>(outline ? 
     `border:3px solid ${theme.colors.purple}` : 
     `border: 1px solid ${theme.colors.border}` )};
@@ -35,7 +36,7 @@ const Profile: React.FC<ProfileProps> = ({
         outline={outline}
         flex={flex}
         >
-            {image ? <img src={image} alt=""/>:<Logo style={{flex:1}}/>}
+            {image ? <img src={image} alt="" style={{overflow:'hidden',objectFit:'cover',borderRadius:radius}}/>:<Logo style={{flex:1}}/>}
         </StyleProfile>
     )
 }

@@ -3,7 +3,6 @@ import { render } from '@testing-library/react';
 import Component from './';
 import { ViewProps } from './type';
 import TestThemeProvider from '../../utils/TestThemeProvider';
-import theme from '../../theme';
 
 const View: React.FC<ViewProps> =({...props})=>(
     <TestThemeProvider>
