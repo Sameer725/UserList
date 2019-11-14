@@ -1,6 +1,9 @@
 export interface BulletProps {
     round?:boolean | number;
-    data:string[] | number[];
     className?:string;
-    style?:React.CSSProperties | {}
+    style?:React.CSSProperties | {};
+}
+
+export interface DataProps extends BulletProps {
+    data:Array<string | number>
 }

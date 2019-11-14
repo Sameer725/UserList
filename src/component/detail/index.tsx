@@ -2,6 +2,15 @@ import React from 'react';
 import theme,{styled} from '../../theme';
 import {DetailProps} from './types';
 
+interface Textprop {
+    decor?:Object
+} 
+const Text: React.FC<Textprop> = ({decor,children})=>(
+    <span style={decor}>{children}
+        </span>
+);
+
+
 const StyleDetail = styled.div<DetailProps>`
 outline:none;
 padding:3px;
@@ -21,7 +30,7 @@ style,
 className,
 left,
 right,
-name
+name,
 }) =>{
 return <StyleDetail
  divider={divider}
@@ -30,25 +39,26 @@ return <StyleDetail
  dcolumn={dcolumn}
  >{
      left ?
- <span style={{fontSize:15,
+ <Text decor={{fontSize:15,
  fontWeight:'bold',
  flex:'content',
  display:'flex',
  letterSpacing:0.2,
- color:theme.colors.purple
+ color:theme.colors.purple,
+ alignSelf:'center'
  }}>{left.name }
 
- {left.role && <span style={{fontSize:10,
+ {left.role && <Text decor={{fontSize:10,
     fontWeight:'500',marginLeft:8,
     display:'flex',alignSelf:'flex-end',
     letterSpacing:0.5,color:theme.colors.caption
     }}>{left.role}
-    </span>}
+    </Text>}
 
- </span>
+ </Text>
  :
  name ?
- <span style={{fontSize:15,
+ <Text decor={{fontSize:15,
  fontWeight:'bold',
  flex:'content',
  display:'flex',
@@ -56,13 +66,14 @@ return <StyleDetail
  marginRight:4,
  letterSpacing:0.2,
  }}>{name }
- </span>
+ </Text>
  :
  null
  }
  {
      right ? right:null
  }
+
 </StyleDetail>
 
 };

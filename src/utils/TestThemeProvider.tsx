@@ -2,10 +2,10 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import theme from '../theme';
 
-const ThemeProvider:React.FC = ({children})=>(
+const TestThemeProvider:React.FC = ({children})=>(
     <ThemeProvider theme={theme}>
         <>{children}</>
     </ThemeProvider>
 );
 
-export default ThemeProvider;
+export default TestThemeProvider;

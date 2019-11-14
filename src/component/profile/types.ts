@@ -6,4 +6,5 @@ export interface ProfileProps {
     outline?:boolean;
     flex?:number;
     image?:string;
+    className?:string;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import theme,{styled} from '../../theme';
-import {BulletProps} from './types';
+import {BulletProps,DataProps} from './types';
 
 const b_colors = [
     '#d1c4e9',
@@ -29,16 +29,14 @@ ${({round})=>(typeof round === 'boolean' ?
 )}
 `
 
-const Bullet : React.FC <BulletProps> =({
-    round,
-    data,
-})=>{
-   return data.map((item:number | string,i:number)=>{
-
+const Bullet : React.FC <DataProps> =({data,...rest})=>{
+    
+      const datas =  data.map((item,i)=>{
+          
         return <StyleBullet
         key={i}
-        round={round}
         style= {{backgroundColor:b_colors[i % 6]}}
+        {...rest}
         >
           <span style={{fontSize:10,
                 fontWeight:'bold',display:'flex',
@@ -47,7 +45,13 @@ const Bullet : React.FC <BulletProps> =({
            </span>
 
         </StyleBullet>
-    })
+    }) 
+
+    return <>
+    {
+        datas
+    }
+    </>
 }
 
 export default Bullet;
