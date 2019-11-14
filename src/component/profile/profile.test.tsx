@@ -24,8 +24,8 @@ describe("Profile Props",() => {
     });
     it("should render the given image with given style",()=>{
         const {container} = render(<Profile image={uri} style={{borderRadius:15}}/>)
-        const cont = container.children.item(0);
-        expect(cont).toContainHTML;
+        const cont = container.children.item(0) ;
+        expect(cont).toContainElement;
         expect(cont).toHaveStyle("border-radius:15px")
     });
 

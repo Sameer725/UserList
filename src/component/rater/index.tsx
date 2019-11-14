@@ -16,15 +16,14 @@ const _star = Array.apply(null,Array(total)).map(item=> {
 });
 
 _star.splice(rating,total-rating,_khali);
-const actual = _star.flat();
 
-const rater =  actual.map(item=>{
+const actual = _star.flatMap(item=>{
     return item
-})
+});
 
 return <div style={{height:20,flex:total*0.15,display:'flex',flexDirection:'row',marginLeft:10}}>
     {
-        rater
+        actual
     }
 </div>
 }
